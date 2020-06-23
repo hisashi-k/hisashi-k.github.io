@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Chart Tools</title>
+</head>
+<body>
+    <div id="target"></div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        (function(){
+            'use strict';
+
+            function drawChart() {
+                var target = document.getElementById('target');
+                var data;
+                var options = {
+                    title: 'My Chart',
+                    width: 500,
+                    height: 300,
+                    hAxis: {title: 'Year'},
+                    vAxis: {title: 'Sales'},
+                    curveType: 'function',
+                    pointSize: 10,
+                    pointShape: 'square',
+                };
+                var chart = new google.visualization.LineChart(target);
+                data = new google.visualization.arrayToDataTable([
+                    ['Year', '@eiko', '@hisashi'],
+                    ['2014', 52, 89],
+                    ['2015', 38, 78],
+                    ['2016', 44, 88],
+                    ['2017', 62, 91],
+                ]);
+
+                chart.draw(data, options);
+            }
+
+            google.charts.load('current', {packages: ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+        })();
+    </script>
+    
+</body>
+</html>
