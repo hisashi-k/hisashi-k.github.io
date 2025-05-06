@@ -1,3 +1,3 @@
-# Google Font
+# Google Fonts
 
-# Google Chart
+# Google Charts
